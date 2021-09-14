@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""print unicode values and associated information to stdout."""
+import argparse
+from unicodes_api import unicodes
+import os
+
+dstring = f"""
+{__doc__}
+
+example:
+    {os.path.basename(__file__)} | fzf
+"""
+
+
+parser = argparse.ArgumentParser(
+    formatter_class=argparse.RawDescriptionHelpFormatter,
+    description=dstring,
+)
+parser.add_argument(
+    "--filter",
+    "-f",
+    help="filter values",
+    action='extend',
+    default=[],
+    nargs="*",
+)
+
+parser.add_argument(
+    "--exclude",
+    "-e",
+    help="reverse filter",
+    action='extend',
+    default=[],
+    nargs="*",
+)
+
+
+def main(args):
+    """Run main function."""
+    for _, i in enumerate(unicodes()):
+        _int, _hex, _chr, name, uval, htmlent = i.values()
+        line = f"{_chr} {name} int:{_int} hex:{_hex.zfill(2)} {uval} {htmlent}"
+        if not args.filter:
+            print(line, flush=True)
+            continue
+        pval = all([
+            all([i in name for i in args.filter]),
+            not any([i in name for i in args.exclude]),
+        ])
+        if pval:
+            print(line, flush=True)
+
+
+if __name__ == "__main__":
+    import shlex
+    aval = shlex.split('-f bracket -f left -e vert')
+    aval = shlex.split('-h')
+    args = parser.parse_args(aval)
+    # args = parser.parse_args()
+    main(args)
