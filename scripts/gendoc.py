@@ -16,8 +16,8 @@ MEDIA_DIR = BASE.joinpath("media")
 DEMO_DIR = BASE.joinpath("media/demo")
 sys.path.append(str(BINDIR.absolute()))
 
-GITHUB_BASE = "https://github.com/shollingsworth/unicodes"
-GITHUB_RAW_BASE = "https://raw.githubusercontent.com/shollingsworth/unicodes"
+GITHUB_BASE = "https://github.com/shollingsworth/unicodes/blob/main"
+GITHUB_RAW = "https://github.com/shollingsworth/unicodes/raw/main"
 
 
 def _code_section(txt):
@@ -45,7 +45,7 @@ def _examples():
         srcpath = script.relative_to(BASE)
         medpath = _mf.relative_to(BASE)
         srclink = f"[{script.name}]({GITHUB_BASE}/{srcpath})"
-        medlink = f"![{script.name}]({GITHUB_RAW_BASE}/{medpath})"
+        medlink = f"![{script.name}]({GITHUB_RAW}/{medpath})"
         sect.append(f"## {srclink}")
         sect.append(f"{medlink}")
         sections.append("\n".join(sect))
