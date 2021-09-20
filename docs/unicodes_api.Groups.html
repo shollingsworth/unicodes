@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>unicodes_api.Groups : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          unicodes_api
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="unicodes_api.html">unicodes_api</a></code>.<code><a href="unicodes_api.Groups.html">Groups</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Groups</span>:</code></p>
+        <p><a href="classIndex.html#unicodes_api.Groups">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Pre built filter for groups of unicode objects.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id4">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#CACHED">CACHED</a></code></td>
+    <td><span>Cached iter_unicodes List[Dict].</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#TOKENIZED">TOKENIZED</a></code></td>
+    <td><span>Cached tokenized dict of set of keys.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#make_tokenized">make_tokenized</a></code></td>
+    <td><span>Make tokenized data.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#grouping">grouping</a></code></td>
+    <td><span>Group token values.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_vals">get_vals</a></code></td>
+    <td><span>Get dictionary values for token.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#iter_all_groups">iter_all_groups</a></code></td>
+    <td><span>Iterate through all groups.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#group_names">group_names</a></code></td>
+    <td><span>Iterate through group names.</span></td>
+  </tr><tr class="staticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="#_make_cache">_make_cache</a></code></td>
+    <td><span>Make cache.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="unicodes_api.Groups.CACHED">
+    
+  </a>
+  <a name="CACHED">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">CACHED</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Cached iter_unicodes List[Dict].</p></div> (type: <code>dict</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="unicodes_api.Groups.TOKENIZED">
+    
+  </a>
+  <a name="TOKENIZED">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TOKENIZED</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Cached tokenized dict of set of keys.</p></div> (type: <code>dict</code>)
+  </div>
+</div><div class="basestaticmethod private">
+  
+  <a name="unicodes_api.Groups._make_cache">
+    
+  </a>
+  <a name="_make_cache">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_make_cache</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Make cache.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.Groups.make_tokenized">
+    
+  </a>
+  <a name="make_tokenized">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">make_tokenized</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Make tokenized data.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.Groups.grouping">
+    
+  </a>
+  <a name="grouping">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">grouping</span>(self, include_tokens, exclude_tokens=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Group token values.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">include_tokens</td><td><span class="undocumented">Undocumented</span> (type: <code>list</code>)</td></tr><tr><td></td><td class="fieldArg">exclude_tokens</td><td><span class="undocumented">Undocumented</span> (type: <code>list</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.Groups.get_vals">
+    
+  </a>
+  <a name="get_vals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_vals</span>(self, token):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get dictionary values for token.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><span class="undocumented">Undocumented</span> (type: <code>Iterator[Dict]</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.Groups.iter_all_groups">
+    
+  </a>
+  <a name="iter_all_groups">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">iter_all_groups</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Iterate through all groups.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><span class="undocumented">Undocumented</span> (type: <code>Iterator[Tuple[str, List[Dict]]]</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.Groups.group_names">
+    
+  </a>
+  <a name="group_names">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">group_names</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Iterate through group names.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><span class="undocumented">Undocumented</span> (type: <code>Iterator[Tuple[str, int]]</code>)</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for unicodes_api, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 1996-06-17 15:00:00.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

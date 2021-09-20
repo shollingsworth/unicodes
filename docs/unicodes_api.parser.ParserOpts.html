@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>unicodes_api.parser.ParserOpts : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          unicodes_api
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="unicodes_api.html">unicodes_api</a></code>.<code><a href="unicodes_api.parser.html">parser</a></code>.<code><a href="unicodes_api.parser.ParserOpts.html">ParserOpts</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ParserOpts</span>:</code></p>
+        <p><a href="classIndex.html#unicodes_api.parser.ParserOpts">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Parser options.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id19">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#MAIN">MAIN</a></code></td>
+    <td><span>Main ArgumentParser class.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#SUBPARSERS">SUBPARSERS</a></code></td>
+    <td><span>List of subparsers.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#SUBCMDS">SUBCMDS</a></code></td>
+    <td><span>Collection of this instances of this class.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>initialize ParserOpts.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pcls">pcls</a></code></td>
+    <td><span>Parent class (from which I was called).</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#name">name</a></code></td>
+    <td><span>command name.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#parser">parser</a></code></td>
+    <td><span>Current parser.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#args_setup">args_setup</a></code></td>
+    <td><span>Setup args.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_filter">add_filter</a></code></td>
+    <td><span>Add filter argument.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_exclude">add_exclude</a></code></td>
+    <td><span>Add exclude argument.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_details">add_details</a></code></td>
+    <td><span>Add detail argument.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_json">add_json</a></code></td>
+    <td><span>Add json argument.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_help">get_help</a></code></td>
+    <td><span>Get help doc.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_subparser">_get_subparser</a></code></td>
+    <td><span>Get self subparser.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="unicodes_api.parser.ParserOpts.MAIN">
+    
+  </a>
+  <a name="MAIN">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">MAIN</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Main ArgumentParser class.</p></div> (type: <code>(Any | argparse.ArgumentParser)</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="unicodes_api.parser.ParserOpts.SUBPARSERS">
+    
+  </a>
+  <a name="SUBPARSERS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SUBPARSERS</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>List of subparsers.</p></div> (type: <code>(Any | argparse.ArgumentParser)</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="unicodes_api.parser.ParserOpts.SUBCMDS">
+    
+  </a>
+  <a name="SUBCMDS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SUBCMDS</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Collection of this instances of this class.</p></div> (type: <code>List[<a href="unicodes_api.parser.ParserOpts.html">ParserOpts</a>]</code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.ParserOpts.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, name, pcls):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>initialize ParserOpts.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">pcls</td><td><span class="undocumented">Undocumented</span> (type: <code>type</code>)</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.parser.ParserOpts.pcls">
+    
+  </a>
+  <a name="pcls">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pcls</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Parent class (from which I was called).</p></div> (type: <code>Any</code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.parser.ParserOpts.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">name</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>command name.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.parser.ParserOpts.parser">
+    
+  </a>
+  <a name="parser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">parser</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Current parser.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.ParserOpts.args_setup">
+    
+  </a>
+  <a name="args_setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">args_setup</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Setup args.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.ParserOpts.add_filter">
+    
+  </a>
+  <a name="add_filter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_filter</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add filter argument.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.ParserOpts.add_exclude">
+    
+  </a>
+  <a name="add_exclude">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_exclude</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add exclude argument.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.ParserOpts.add_details">
+    
+  </a>
+  <a name="add_details">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_details</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add detail argument.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.ParserOpts.add_json">
+    
+  </a>
+  <a name="add_json">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_json</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add json argument.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.ParserOpts.get_help">
+    
+  </a>
+  <a name="get_help">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_help</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get help doc.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.parser.ParserOpts._get_subparser">
+    
+  </a>
+  <a name="_get_subparser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_subparser</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get self subparser.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><span class="undocumented">Undocumented</span> (type: <code>argparse.ArgumentParser</code>)</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for unicodes_api, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 1996-06-17 15:00:00.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

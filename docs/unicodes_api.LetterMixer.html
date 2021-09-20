@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>unicodes_api.LetterMixer : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          unicodes_api
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="unicodes_api.html">unicodes_api</a></code>.<code><a href="unicodes_api.LetterMixer.html">LetterMixer</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">LetterMixer</span>:</code></p>
+        <p><a href="classIndex.html#unicodes_api.LetterMixer">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Letter mixer clas.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id5">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Init class.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#group">group</a></code></td>
+    <td><span>main group data.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#alphabet_dict">alphabet_dict</a></code></td>
+    <td><span>re-usable alphabet_dict.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#object_dict">object_dict</a></code></td>
+    <td><span>re-usable object dict.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#mix_word">mix_word</a></code></td>
+    <td><span>Mix up the word with unicode varients.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_yield_letter">_yield_letter</a></code></td>
+    <td><span>Yield letter mixer values for letter/digit that corresponds to the unicode varients.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_alphabet_dict">_alphabet_dict</a></code></td>
+    <td><span>Generated alphabet_dict.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_obj_dict">_obj_dict</a></code></td>
+    <td><span>Generated object dict.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="unicodes_api.LetterMixer.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Init class.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.LetterMixer.group">
+    
+  </a>
+  <a name="group">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">group</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>main group data.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.LetterMixer.alphabet_dict">
+    
+  </a>
+  <a name="alphabet_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">alphabet_dict</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>re-usable alphabet_dict.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.LetterMixer.object_dict">
+    
+  </a>
+  <a name="object_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">object_dict</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>re-usable object dict.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.LetterMixer._yield_letter">
+    
+  </a>
+  <a name="_yield_letter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_yield_letter</span>(self, letter):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Yield letter mixer values for letter/digit that corresponds to the unicode varients.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><span class="undocumented">Undocumented</span> (type: <code>Iterator[Dict]</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.LetterMixer._alphabet_dict">
+    
+  </a>
+  <a name="_alphabet_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_alphabet_dict</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generated alphabet_dict.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.LetterMixer._obj_dict">
+    
+  </a>
+  <a name="_obj_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_obj_dict</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generated object dict.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.LetterMixer.mix_word">
+    
+  </a>
+  <a name="mix_word">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mix_word</span>(self, word):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Mix up the word with unicode varients.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for unicodes_api, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 1996-06-17 15:00:00.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

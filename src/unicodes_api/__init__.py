@@ -1,210 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Print / show characters."""
+from typing import Iterator, Dict, List, Any, Tuple, Set
+import random
 import unicodedata
+from unicodes_api.ascii import ASCII_MAP
 
-ASCII_LIST = [
-    {"hex": "00", "rep": "^@", "int": 0, "description": "null :: NUL"},
-    {"hex": "01", "rep": "^A", "int": 1, "description": "startofheading :: SOH"},
-    {"hex": "02", "rep": "^B", "int": 2, "description": "startoftext :: STX"},
-    {"hex": "03", "rep": "^C", "int": 3, "description": "endoftext :: EOT"},
-    {"hex": "04", "rep": "^D", "int": 4, "description": "endoftransmission :: EOT"},
-    {"hex": "05", "rep": "^E", "int": 5, "description": "enquiry :: ENQ"},
-    {"hex": "06", "rep": "^F", "int": 6, "description": "acknowledge :: ACK"},
-    {"hex": "07", "rep": "^G", "int": 7, "description": "bell :: BEL"},
-    {"hex": "08", "rep": "^H", "int": 8, "description": "backspace :: BS"},
-    {"hex": "09", "rep": "^I", "int": 9, "description": "horizontaltab :: HT"},
-    {"hex": "0A", "rep": "^J", "int": 10, "description": "linefeed,newline :: LF,NL"},
-    {"hex": "0B", "rep": "^K", "int": 11, "description": "verticaltab :: VT"},
-    {"hex": "0C", "rep": "^L", "int": 12, "description": "formfeed,newpage :: FF,NP"},
-    {"hex": "0D", "rep": "^M", "int": 13, "description": "carriagereturn :: CR"},
-    {"hex": "0E", "rep": "^N", "int": 14, "description": "shiftout :: SO"},
-    {"hex": "0F", "rep": "^O", "int": 15, "description": "shiftin :: SI"},
-    {"hex": "10", "rep": "^P", "int": 16, "description": "datalinkescape :: DLE"},
-    {"hex": "11", "rep": "^Q", "int": 17, "description": "devicecontrol1 :: DC1"},
-    {"hex": "12", "rep": "^R", "int": 18, "description": "devicecontrol2 :: DC2"},
-    {"hex": "13", "rep": "^S", "int": 19, "description": "devicecontrol3 :: DC3"},
-    {"hex": "14", "rep": "^T", "int": 20, "description": "devicecontrol4 :: DC4"},
-    {"hex": "15", "rep": "^U", "int": 21, "description": "negativeacknowledge :: NAK"},
-    {"hex": "16", "rep": "^V", "int": 22, "description": "synchonousidle :: SYN"},
-    {
-        "hex": "17",
-        "rep": "^W",
-        "int": 23,
-        "description": "endoftransmissionblock :: ETB",
-    },
-    {"hex": "18", "rep": "^X", "int": 24, "description": "cancel :: CAN"},
-    {"hex": "19", "rep": "^Y", "int": 25, "description": "endofmedium :: EM"},
-    {"hex": "1A", "rep": "^Z", "int": 26, "description": "substitute :: SUB"},
-    {"hex": "1B", "rep": "^[", "int": 27, "description": "escape :: ESC"},
-    {"hex": "1C", "rep": "^\\", "int": 28, "description": "fileseparator :: FS"},
-    {"hex": "1D", "rep": "^]", "int": 29, "description": "groupseparator :: GS"},
-    {"hex": "1E", "rep": "^^", "int": 30, "description": "recordseparator :: RS"},
-    {"hex": "1F", "rep": "^", "int": 31, "description": "unitseparator :: US"},
-    {"hex": "20", "rep": "&sp;", "int": 32, "description": "space :: &sp;"},
-    {"hex": "21", "rep": "!", "int": 33, "description": "&excl; :: exclamationmark"},
-    {
-        "hex": "22",
-        "rep": '"',
-        "int": 34,
-        "description": "&quot; :: doublequotationmark",
-    },
-    {"hex": "23", "rep": "#", "int": 35, "description": "&num; :: numbersign,pound"},
-    {"hex": "24", "rep": "$", "int": 36, "description": "&dollar; :: dollarsign"},
-    {"hex": "25", "rep": "%", "int": 37, "description": "&percnt; :: percentsign"},
-    {"hex": "26", "rep": "&", "int": 38, "description": "&amp; :: ampersand"},
-    {
-        "hex": "27",
-        "rep": "'",
-        "int": 39,
-        "description": "&apos; :: apostrophe, single quote",
-    },
-    {"hex": "28", "rep": "(", "int": 40, "description": "&lpar; :: leftparenthesis"},
-    {"hex": "29", "rep": ")", "int": 41, "description": "&rpar; :: rightparenthesis"},
-    {"hex": "2A", "rep": "*", "int": 42, "description": "&ast; :: asterisk"},
-    {"hex": "2B", "rep": "+", "int": 43, "description": "&plus; :: plussign"},
-    {"hex": "2C", "rep": ",", "int": 44, "description": "&comma; :: comma"},
-    {
-        "hex": "2D",
-        "rep": "-",
-        "int": 45,
-        "description": "&minus;\u00a0&hyphen; :: minussign,hyphen",
-    },
-    {
-        "hex": "2E",
-        "rep": ".",
-        "int": 46,
-        "description": "&period; :: period, decimal point,",
-    },
-    {
-        "hex": "2F",
-        "rep": "/",
-        "int": 47,
-        "description": "&sol; :: slash,virgule,solidus",
-    },
-    {"hex": "30", "rep": "0", "int": 48, "description": "digit0 :: 0"},
-    {"hex": "31", "rep": "1", "int": 49, "description": "digit1 :: 1"},
-    {"hex": "32", "rep": "2", "int": 50, "description": "digit2 :: 2"},
-    {"hex": "33", "rep": "3", "int": 51, "description": "digit3 :: 3"},
-    {"hex": "34", "rep": "4", "int": 52, "description": "digit4 :: 4"},
-    {"hex": "35", "rep": "5", "int": 53, "description": "digit5 :: 5"},
-    {"hex": "36", "rep": "6", "int": 54, "description": "digit6 :: 6"},
-    {"hex": "37", "rep": "7", "int": 55, "description": "digit7 :: 7"},
-    {"hex": "38", "rep": "8", "int": 56, "description": "digit8 :: 8"},
-    {"hex": "39", "rep": "9", "int": 57, "description": "digit9 :: 9"},
-    {"hex": "3A", "rep": ":", "int": 58, "description": "&colon; :: colon"},
-    {"hex": "3B", "rep": ";", "int": 59, "description": "&semi; :: semicolon"},
-    {"hex": "3C", "rep": "<", "int": 60, "description": "&lt; :: less-thansign"},
-    {"hex": "3D", "rep": "=", "int": 61, "description": "&equals; :: equalsign"},
-    {"hex": "3E", "rep": ">", "int": 62, "description": "&gt; :: greater-thansign"},
-    {"hex": "3F", "rep": "?", "int": 63, "description": "&quest; :: questionmark"},
-    {"hex": "40", "rep": "@", "int": 64, "description": "&commat; :: commercialatsign"},
-    {"hex": "41", "rep": "A", "int": 65, "description": "capitalA :: A"},
-    {"hex": "42", "rep": "B", "int": 66, "description": "capitalB :: B"},
-    {"hex": "43", "rep": "C", "int": 67, "description": "capitalC :: C"},
-    {"hex": "44", "rep": "D", "int": 68, "description": "capitalD :: D"},
-    {"hex": "45", "rep": "E", "int": 69, "description": "capitalE :: E"},
-    {"hex": "46", "rep": "F", "int": 70, "description": "capitalF :: F"},
-    {"hex": "47", "rep": "G", "int": 71, "description": "capitalG :: G"},
-    {"hex": "48", "rep": "H", "int": 72, "description": "capitalH :: H"},
-    {"hex": "49", "rep": "I", "int": 73, "description": "capitalI :: I"},
-    {"hex": "4A", "rep": "J", "int": 74, "description": "capitalJ :: J"},
-    {"hex": "4B", "rep": "K", "int": 75, "description": "capitalK :: K"},
-    {"hex": "4C", "rep": "L", "int": 76, "description": "capitalL :: L"},
-    {"hex": "4D", "rep": "M", "int": 77, "description": "capitalM :: M"},
-    {"hex": "4E", "rep": "N", "int": 78, "description": "capitalN :: N"},
-    {"hex": "4F", "rep": "O", "int": 79, "description": "capitalO :: O"},
-    {"hex": "50", "rep": "P", "int": 80, "description": "capitalP :: P"},
-    {"hex": "51", "rep": "Q", "int": 81, "description": "capitalQ :: Q"},
-    {"hex": "52", "rep": "R", "int": 82, "description": "capitalR :: R"},
-    {"hex": "53", "rep": "S", "int": 83, "description": "capitalS :: S"},
-    {"hex": "54", "rep": "T", "int": 84, "description": "capitalT :: T"},
-    {"hex": "55", "rep": "U", "int": 85, "description": "capitalU :: U"},
-    {"hex": "56", "rep": "V", "int": 86, "description": "capitalV :: V"},
-    {"hex": "57", "rep": "W", "int": 87, "description": "capitalW :: W"},
-    {"hex": "58", "rep": "X", "int": 88, "description": "capitalX :: X"},
-    {"hex": "59", "rep": "Y", "int": 89, "description": "capitalY :: Y"},
-    {"hex": "5A", "rep": "Z", "int": 90, "description": "capitalZ :: Z"},
-    {"hex": "5B", "rep": "[", "int": 91, "description": "&lsqb; :: leftsquarebracket"},
-    {
-        "hex": "5C",
-        "rep": "\\",
-        "int": 92,
-        "description": "&bsol; :: backslash,reversesolidus",
-    },
-    {"hex": "5D", "rep": "]", "int": 93, "description": "&rsqb; :: rightsquarebracket"},
-    {
-        "hex": "5E",
-        "rep": "^",
-        "int": 94,
-        "description": "&circ; :: spacingcircumflexaccent",
-    },
-    {
-        "hex": "5F",
-        "rep": "&lowbar; \u00a0 &horbar",
-        "int": 95,
-        "description": "spacing underscore, low :: &lowbar; \u00a0 &horbar",
-    },
-    {
-        "hex": "60",
-        "rep": "`",
-        "int": 96,
-        "description": "&grave; :: spacing grave accent, back",
-    },
-    {"hex": "61", "rep": "a", "int": 97, "description": "smalla :: a"},
-    {"hex": "62", "rep": "b", "int": 98, "description": "smallb :: b"},
-    {"hex": "63", "rep": "c", "int": 99, "description": "smallc :: c"},
-    {"hex": "64", "rep": "d", "int": 100, "description": "smalld :: d"},
-    {"hex": "65", "rep": "e", "int": 101, "description": "smalle :: e"},
-    {"hex": "66", "rep": "f", "int": 102, "description": "smallf :: f"},
-    {"hex": "67", "rep": "g", "int": 103, "description": "smallg :: g"},
-    {"hex": "68", "rep": "h", "int": 104, "description": "smallh :: h"},
-    {"hex": "69", "rep": "i", "int": 105, "description": "smalli :: i"},
-    {"hex": "6A", "rep": "j", "int": 106, "description": "smallj :: j"},
-    {"hex": "6B", "rep": "k", "int": 107, "description": "smallk :: k"},
-    {"hex": "6C", "rep": "l", "int": 108, "description": "smalll :: l"},
-    {"hex": "6D", "rep": "m", "int": 109, "description": "smallm :: m"},
-    {"hex": "6E", "rep": "n", "int": 110, "description": "smalln :: n"},
-    {"hex": "6F", "rep": "o", "int": 111, "description": "smallo :: o"},
-    {"hex": "70", "rep": "p", "int": 112, "description": "smallp :: p"},
-    {"hex": "71", "rep": "q", "int": 113, "description": "smallq :: q"},
-    {"hex": "72", "rep": "r", "int": 114, "description": "smallr :: r"},
-    {"hex": "73", "rep": "s", "int": 115, "description": "smalls :: s"},
-    {"hex": "74", "rep": "t", "int": 116, "description": "smallt :: t"},
-    {"hex": "75", "rep": "u", "int": 117, "description": "smallu :: u"},
-    {"hex": "76", "rep": "v", "int": 118, "description": "smallv :: v"},
-    {"hex": "77", "rep": "w", "int": 119, "description": "smallw :: w"},
-    {"hex": "78", "rep": "x", "int": 120, "description": "smallx :: x"},
-    {"hex": "79", "rep": "y", "int": 121, "description": "smally :: y"},
-    {"hex": "7A", "rep": "z", "int": 122, "description": "smallz :: z"},
-    {
-        "hex": "7B",
-        "rep": "{",
-        "int": 123,
-        "description": "&lcub; :: left brace, left curly",
-    },
-    {
-        "hex": "7C",
-        "rep": "&verbar;",
-        "int": 124,
-        "description": "verticalbar :: &verbar;",
-    },
-    {
-        "hex": "7D",
-        "rep": "}",
-        "int": 125,
-        "description": "&rcub; :: right brace, right curly",
-    },
-    {"hex": "7E", "rep": "~", "int": 126, "description": "&tilde; :: tildeaccent"},
-    {"hex": "7F", "rep": "^?", "int": 127, "description": "delete :: DEL"},
-]
-"""Fill in ASCII description values for Unicode names."""
-
-ASCII_MAP = {i["int"]: i for i in ASCII_LIST}
-"""Dictionary Map of ASCII_LIST."""
+# pylint: disable=too-few-public-methods,invalid-name
+# pylint: disable=pointless-string-statement
 
 
-def unicodes() -> dict:
+LETTERS_NUMBERS = list(
+    map(chr, list(range(ord("a"), ord("z") + 1)) + list(range(ord("0"), ord("9") + 1)))
+)
+"""letters and numbers we want to track for LetterMixer."""
+
+
+def iter_unicodes() -> Iterator[Dict]:
     """yield all Unicode values.
 
     returns iterator of dictionaries in the following format::
@@ -214,7 +26,8 @@ def unicodes() -> dict:
             "chr": char,
             "name": name.lower(),
             "pref": pref,
-            "htmlent": htmlent
+            "htmlent": htmlent,
+            "tokens": list,
         }
 
     example for letter "a"::
@@ -225,6 +38,7 @@ def unicodes() -> dict:
             "name": "latin small letter a",
             "pref": "\\\\u0061",
             "htmlent": "&#97;"
+            "tokens": ["latin", "small", "letter", "a"],
         }
     """
     for i in range(0x10FFFF):
@@ -244,14 +58,304 @@ def unicodes() -> dict:
             pref = f"\\U{hval.zfill(8)}"
 
         htmlent = f"&#{i};"
+
+        tokens = [i.lower() for i in " ".join(name.split("-")).split()]
         try:
             yield {
-                "int": i,
-                "hex": hval,
                 "chr": char,
                 "name": name.lower(),
-                "pref": pref,
-                "htmlent": htmlent,
+                "int": i,
+                "hex": hval,
+                "python": pref,
+                "html": htmlent,
+                "tokens": tokens,
             }
         except UnicodeEncodeError:
             pass
+
+
+class Pairs:
+    """Pre built filter for pairs of unicode objects."""
+
+    def __init__(
+        self,
+        left: str,
+        right: str,
+        include_tokens=None,  # type: Any | List
+        exclude_tokens=None,  # type: Any | List
+    ):
+        """initialize pairs class."""
+        self.include_tokens = include_tokens or []
+        """include tokens."""
+        self.exclude_tokens = exclude_tokens or []
+        """exclude tokens."""
+        self.left = left
+        """current left position."""
+        self.right = right
+        """current right position."""
+        self.groups = Groups()
+        """main groups class."""
+        self.groups.make_tokenized()
+        self.vals = self._setup()
+        """token values."""
+
+    def _setup(self):
+        """Setup data."""
+        vals = {}
+        for key in [self.left, self.right]:
+            for v in self.groups.get_vals(key):
+                name = v["name"]
+                toks = v["tokens"]
+                if any(i in toks for i in self.exclude_tokens):
+                    continue
+                if self.include_tokens and any(i in toks for i in self.include_tokens):
+                    vals[name] = v
+                    continue
+                vals[name] = v
+        return vals
+
+    def _pairs(
+        self, includes: list = None, excludes: list = None
+    ) -> Iterator[Tuple[str, Dict, Dict]]:
+        """Base iterator."""
+        stubs = []
+        includes = includes or []
+        excludes = excludes or []
+
+        def _pname(val):
+            arr = val.replace("__STUB__", "").split()
+            return " ".join(i.strip().strip("-") for i in arr)
+
+        for name, _ in self.vals.items():
+            if self.left in name:
+                stub = name.replace(self.left, "__STUB__")
+                stubs.append(stub)
+
+        for stub in stubs:
+            key1, key2 = (
+                stub.replace("__STUB__", self.left),
+                stub.replace("__STUB__", self.right),
+            )
+            left = self.vals.get(key1, {})
+            right = self.vals.get(key2, {})
+            if all([left, right]):
+                name = _pname(stub)
+                toks = left["tokens"]
+                toks += right["tokens"]
+                if any(i in toks for i in excludes):
+                    continue
+                if includes and not all(i in toks for i in includes):
+                    continue
+                yield name, left, right
+
+    def pairs(self, includes: list, excludes: list):
+        """return sorted pairs."""
+        _sort = lambda x: (x[1]["chr"], x[2]["chr"])
+        yield from sorted(self._pairs(includes, excludes), key=_sort)
+
+
+class Groups:
+    """Pre built filter for groups of unicode objects."""
+
+    CACHED = {}
+    """Cached iter_unicodes List[Dict]."""
+    TOKENIZED = {}
+    """Cached tokenized dict of set of keys."""
+
+    @staticmethod
+    def _make_cache():
+        """Make cache."""
+        if Groups.CACHED:
+            return
+        for dval in iter_unicodes():
+            key = tuple(dval["tokens"])
+            Groups.CACHED[key] = dval
+
+    def make_tokenized(self):
+        """Make tokenized data."""
+        # already been here
+        if Groups.TOKENIZED:
+            return
+
+        if not Groups.CACHED:
+            self._make_cache()
+
+        for key in self.CACHED:
+            for token in key:
+                Groups.TOKENIZED.setdefault(token, set())
+                Groups.TOKENIZED[token].add(key)
+        tkeys = list(Groups.TOKENIZED.keys())
+        for token in tkeys:
+            try:
+                int(token)
+                del Groups.TOKENIZED[token]
+                continue
+            except ValueError:
+                pass
+            if len(Groups.TOKENIZED[token]) < 3:
+                del Groups.TOKENIZED[token]
+
+    def grouping(
+        self,
+        include_tokens: list,
+        exclude_tokens: list = None,
+    ):
+        """Group token values."""
+        self.make_tokenized()
+        exclude_tokens = exclude_tokens or []
+        includes = [self.TOKENIZED[i] for i in include_tokens]
+        excludes = [self.TOKENIZED[i] for i in exclude_tokens]
+        _inc = set.intersection(*includes)
+        _inc.difference_update(*excludes)
+        for i in _inc:
+            yield self.CACHED[i]
+
+    def get_vals(self, token) -> Iterator[Dict]:
+        """Get dictionary values for token."""
+        self.make_tokenized()
+        for key in self.TOKENIZED[token]:
+            yield self.CACHED[key]
+
+    def iter_all_groups(self) -> Iterator[Tuple[str, List[Dict]]]:
+        """Iterate through all groups."""
+        self.make_tokenized()
+        for tup in sorted(self.TOKENIZED.items()):
+            token = tup[0]  # type: str
+            tset = tup[1]  # type: Set
+            tsets = [self.CACHED[i] for i in tset]
+            yield token, tsets
+
+    def group_names(self) -> Iterator[Tuple[str, int]]:
+        """Iterate through group names."""
+        self.make_tokenized()
+        groups = []
+        for token, keys in self.TOKENIZED.items():
+            groups.append((len(keys), token))
+        for tlen, token in sorted(groups, reverse=True):
+            yield token, tlen
+
+
+class LetterMixer:
+    """Letter mixer clas."""
+
+    def __init__(self):
+        """Init class."""
+        self.group = Groups()
+        """main group data."""
+        self.group.make_tokenized()
+        self.alphabet_dict = self._alphabet_dict()
+        """re-usable alphabet_dict."""
+        self.object_dict = self._obj_dict()
+        """re-usable object dict."""
+
+    def _yield_letter(self, letter) -> Iterator[Dict]:
+        """Yield letter mixer values for letter/digit that corresponds to the unicode varients."""
+        excludes = [
+            "tag",
+            "fullwidth",
+            "combining",
+            "squared",
+            "circled",
+            "parenthesized",
+        ]
+        digit_map = {
+            "0": "zero",
+            "1": "one",
+            "2": "two",
+            "3": "three",
+            "4": "four",
+            "5": "five",
+            "6": "six",
+            "7": "seven",
+            "8": "eight",
+            "9": "nine",
+        }
+        alpha_token_groups = [
+            "latin",
+            "cyrillic",
+            "carian",
+            "osage",
+            "lydian",
+            "old",
+            "cherokee",
+            "rejang",
+            "lisu",
+            "modifier",
+        ]
+        digit_token_groups = [
+            "mathematical",
+            "latin",
+            "digit",
+            "number",
+        ]
+        main = "digit" if letter in digit_map else "letter"
+        dg = digit_token_groups if letter in digit_map else alpha_token_groups
+        for g in dg:
+            args = [
+                main,
+                g,
+                digit_map.get(letter, letter),
+            ]
+            yield from self.group.grouping(args, excludes)
+
+    def _alphabet_dict(self):
+        """Generated alphabet_dict."""
+        return {
+            letter: sorted(list(z["chr"] for z in self._yield_letter(letter)))
+            for letter in LETTERS_NUMBERS
+        }
+
+    def _obj_dict(self):
+        """Generated object dict."""
+        return {letter: list(self._yield_letter(letter)) for letter in LETTERS_NUMBERS}
+
+    def mix_word(self, word):
+        """Mix up the word with unicode varients."""
+        adict = self.alphabet_dict
+        avals = [adict.get(i.lower(), [i]) for i in word]
+        lens = [len(i) for i in avals]
+        rset = [random.randint(0, i - 1) for i in lens]
+        return "".join([avals[idx][z] for idx, z in enumerate(rset)])
+
+
+class PairsGroups:
+    """Pair groups class."""
+
+    PAIR_LIST = {
+        ("left", "right"): {
+            "inc_tokens": ["left", "right"],
+            "exl_tokens": [],
+        },
+        ("top", "bottom"): {
+            "inc_tokens": ["top", "bottom"],
+            "exl_tokens": [],
+        },
+        ("horz", "vert"): {
+            "inc_tokens": ["horizontal", "vertical"],
+            "exl_tokens": [],
+        },
+        ("upper", "lower"): {
+            "inc_tokens": ["upper", "lower"],
+            "exl_tokens": [],
+        },
+    }
+    """Static list of pairs."""
+
+    @staticmethod
+    def iter_pair(
+        p1,
+        p2,
+        extra_includes: list = None,
+        extra_excludes: list = None,
+    ) -> Iterator[Tuple[Tuple[str, str], Tuple[str, Dict, Dict]]]:
+        """left / right pairs."""
+        tup = (p1, p2)
+        extra_includes = extra_includes or []
+        extra_excludes = extra_excludes or []
+        args = PairsGroups.PAIR_LIST[tup]["inc_tokens"]
+
+        excl = PairsGroups.PAIR_LIST[tup]["exl_tokens"]
+        excl.extend(extra_excludes)
+        obj = Pairs(*args)
+        for i in obj.pairs(extra_includes, extra_excludes):
+            yield tup, i

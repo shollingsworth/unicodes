@@ -2,3 +2,4 @@
 src/unicodes.egg-info
 dist/
 build/
+tmp/

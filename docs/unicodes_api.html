@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>unicodes_api : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          unicodes_api
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="package"><code><code><a href="unicodes_api.html">unicodes_api</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        package documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Print / show characters.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1">
+  
+  <tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="unicodes_api.ascii.html">ascii</a></code></td>
+    <td><span>STATIC ASCI data since unicodedata does not output these values.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="unicodes_api.cli.html">cli</a></code></td>
+    <td><span>Cli Commands Module.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="unicodes_api.parser.html">parser</a></code></td>
+    <td><span>Cli Commands Module.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="unicodes_api.screen.html">screen</a></code></td>
+    <td><span>test.</span></td>
+  </tr>
+</table>
+        
+
+          <p class="fromInitPy">From the <code>__init__.py</code> module:</p><table class="children sortable" id="id2">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="unicodes_api.Groups.html">Groups</a></code></td>
+    <td><span>Pre built filter for groups of unicode objects.</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="unicodes_api.html#LETTERS_NUMBERS">LETTERS_NUMBERS</a></code></td>
+    <td><span>letters and numbers we want to track for LetterMixer.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="unicodes_api.LetterMixer.html">LetterMixer</a></code></td>
+    <td><span>Letter mixer clas.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="unicodes_api.Pairs.html">Pairs</a></code></td>
+    <td><span>Pre built filter for pairs of unicode objects.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="unicodes_api.PairsGroups.html">PairsGroups</a></code></td>
+    <td><span>Pair groups class.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="unicodes_api.html#iter_unicodes">iter_unicodes</a></code></td>
+    <td><span>yield all Unicode values.</span></td>
+  </tr>
+</table>
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="unicodes_api.LETTERS_NUMBERS">
+    
+  </a>
+  <a name="LETTERS_NUMBERS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">LETTERS_NUMBERS</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>letters and numbers we want to track for LetterMixer.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="unicodes_api.iter_unicodes">
+    
+  </a>
+  <a name="iter_unicodes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">iter_unicodes</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>yield all Unicode values.</p><p>returns iterator of dictionaries in the following format:</p><pre class="literalblock">
+    {
+        "int": i,
+        "hex": hval,
+        "chr": char,
+        "name": name.lower(),
+        "pref": pref,
+        "htmlent": htmlent,
+        "tokens": list,
+    }
+</pre><p>example for letter "a":</p><pre class="literalblock">
+    {
+        "int": 97,
+        "hex": "61",
+        "chr": "a",
+        "name": "latin small letter a",
+        "pref": "\\u0061",
+        "htmlent": "&amp;#97;"
+        "tokens": ["latin", "small", "letter", "a"],
+    }
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><span class="undocumented">Undocumented</span> (type: <code>Iterator[Dict]</code>)</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for unicodes_api, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 1996-06-17 15:00:00.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

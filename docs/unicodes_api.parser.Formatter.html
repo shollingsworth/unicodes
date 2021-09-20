@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>unicodes_api.parser.Formatter : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          unicodes_api
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="unicodes_api.html">unicodes_api</a></code>.<code><a href="unicodes_api.parser.html">parser</a></code>.<code><a href="unicodes_api.parser.Formatter.html">Formatter</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Formatter</span>(<span title="abc.ABC">ABC</span>):</code></p><p>Known subclasses: <code><a href="unicodes_api.cli.all_to_stdout.html">unicodes_api.cli.all_to_stdout</a></code>, <code><a href="unicodes_api.cli.PairsDisplay.html">unicodes_api.cli.PairsDisplay</a></code></p>
+        <p><a href="classIndex.html#unicodes_api.parser.Formatter">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Formatter class.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id20">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#NAME">NAME</a></code></td>
+    <td><span>subcommand name.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>instantiate Formatter class.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#popts">popts</a></code></td>
+    <td><span>ParserOpts instance.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#args">args</a></code></td>
+    <td><span>argparse.Namespace value.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup">setup</a></code></td>
+    <td><span>setup class for run.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_args">set_args</a></code></td>
+    <td><span>set arguments.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup_popts">setup_popts</a></code></td>
+    <td><span>setup parser options.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#run">run</a></code></td>
+    <td><span>Run program.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#iterator">iterator</a></code></td>
+    <td><span>Iterator.</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#fmt_single_normal">fmt_single_normal</a></code></td>
+    <td><span>format unicode value normally.</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#fmt_dval_sub_lines">fmt_dval_sub_lines</a></code></td>
+    <td><span>Format unicode value as staggered line.</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#tab_shift">tab_shift</a></code></td>
+    <td><span>Shift text over.</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#fmt_group_multi_detail">fmt_group_multi_detail</a></code></td>
+    <td><span>Format group with detail.</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#fmt_group_multi_detail_staggered_lines">fmt_group_multi_detail_staggered_lines</a></code></td>
+    <td><span>Format group with staggered lines.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#fmt_group_normal">fmt_group_normal</a></code></td>
+    <td><span>Format group normally.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#fmt_json">fmt_json</a></code></td>
+    <td><span>Format as parsable json.</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_iterator">_iterator</a></code></td>
+    <td><span>Iterator if set.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="unicodes_api.parser.Formatter.NAME">
+    
+  </a>
+  <a name="NAME">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">NAME</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.all_to_stdout.html">unicodes_api.cli.all_to_stdout</a></code>, <code><a href="unicodes_api.cli.PairsDisplay.html">unicodes_api.cli.PairsDisplay</a></code></div>
+    
+    <div><p>subcommand name.</p></div> (type: <code>Any</code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.Formatter.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.PairsDisplay.html">unicodes_api.cli.PairsDisplay</a></code></div>
+    
+    <div><p>instantiate Formatter class.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.parser.Formatter.popts">
+    
+  </a>
+  <a name="popts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">popts</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>ParserOpts instance.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="unicodes_api.parser.Formatter._iterator">
+    
+  </a>
+  <a name="_iterator">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_iterator</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Iterator if set.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.parser.Formatter.args">
+    
+  </a>
+  <a name="args">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">args</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>argparse.Namespace value.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.Formatter.setup">
+    
+  </a>
+  <a name="setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup</span>(self, iterator):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.all_to_stdout.html">unicodes_api.cli.all_to_stdout</a></code>, <code><a href="unicodes_api.cli.PairsDisplay.html">unicodes_api.cli.PairsDisplay</a></code></div>
+    
+    <div><p>setup class for run.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.Formatter.set_args">
+    
+  </a>
+  <a name="set_args">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_args</span>(self, args):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>set arguments.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">args</td><td><span class="undocumented">Undocumented</span> (type: <code>argparse.Namespace</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.Formatter.setup_popts">
+    
+  </a>
+  <a name="setup_popts">
+    
+  </a>
+  <div class="functionHeader">
+    @abstractmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">setup_popts</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.all_to_stdout.html">unicodes_api.cli.all_to_stdout</a></code>, <code><a href="unicodes_api.cli.PairsDisplay.html">unicodes_api.cli.PairsDisplay</a></code></div>
+    
+    <div><p>setup parser options.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.Formatter.run">
+    
+  </a>
+  <a name="run">
+    
+  </a>
+  <div class="functionHeader">
+    @abstractmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">run</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.all_to_stdout.html">unicodes_api.cli.all_to_stdout</a></code>, <code><a href="unicodes_api.cli.PairsDisplay.html">unicodes_api.cli.PairsDisplay</a></code></div>
+    
+    <div><p>Run program.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.Formatter.iterator">
+    
+  </a>
+  <a name="iterator">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">iterator</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Iterator.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><span class="undocumented">Undocumented</span> (type: <code>Iterator[Dict]</code>)</td></tr></table></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="unicodes_api.parser.Formatter.fmt_single_normal">
+    
+  </a>
+  <a name="fmt_single_normal">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">fmt_single_normal</span>(dval):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>format unicode value normally.</p></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="unicodes_api.parser.Formatter.fmt_dval_sub_lines">
+    
+  </a>
+  <a name="fmt_dval_sub_lines">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">fmt_dval_sub_lines</span>(dval):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Format unicode value as staggered line.</p></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="unicodes_api.parser.Formatter.tab_shift">
+    
+  </a>
+  <a name="tab_shift">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">tab_shift</span>(txtblock, shift_len):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Shift text over.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">txtblock</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">shift_len</td><td><span class="undocumented">Undocumented</span> (type: <code>int</code>)</td></tr></table></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="unicodes_api.parser.Formatter.fmt_group_multi_detail">
+    
+  </a>
+  <a name="fmt_group_multi_detail">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">fmt_group_multi_detail</span>(title, dvals):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Format group with detail.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">dvals</td><td><span class="undocumented">Undocumented</span> (type: <code>Iterable[Dict]</code>)</td></tr></table></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="unicodes_api.parser.Formatter.fmt_group_multi_detail_staggered_lines">
+    
+  </a>
+  <a name="fmt_group_multi_detail_staggered_lines">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">fmt_group_multi_detail_staggered_lines</span>(title, dvals):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Format group with staggered lines.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span></td></tr><tr><td></td><td class="fieldArg">dvals</td><td><span class="undocumented">Undocumented</span> (type: <code>Iterable[Dict]</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.Formatter.fmt_group_normal">
+    
+  </a>
+  <a name="fmt_group_normal">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fmt_group_normal</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Format group normally.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><span class="undocumented">Undocumented</span> (type: <code>Iterator[str]</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.parser.Formatter.fmt_json">
+    
+  </a>
+  <a name="fmt_json">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fmt_json</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Format as parsable json.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2"><span class="undocumented">Undocumented</span> (type: <code>Iterable[str]</code>)</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for unicodes_api, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 1996-06-17 15:00:00.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,6 +1,6 @@
 <map version="freeplane 1.7.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="PS1" FOLDED="false" ID="ID_1002858447" CREATED="1629749144699" MODIFIED="1631479929144" STYLE="oval">
+<node TEXT="Unicodes" FOLDED="false" ID="ID_1002858447" CREATED="1629749144699" MODIFIED="1632178509821" STYLE="oval">
 <font SIZE="18"/>
 <hook NAME="MapStyle">
     <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_icon_for_attributes="true" show_note_icons="true" fit_to_viewport="false"/>
@@ -73,18 +73,19 @@
   </head>
   <body>
     <p>
-      This program is meant to take the pain out of generating nice bash PS1 prompts.
+      This program allows you to interactively explore, search, and output unicode values in the terminal
     </p>
     <p>
       
     </p>
     <p>
-      Pull requests welcome! And if you build an awesome theme, drop something in the [examples](./src/ps1api/examples) folder!
+      Pull requests welcome!
     </p>
   </body>
 </html>
+
 </richcontent>
-<node TEXT="Installation / Quickstart" POSITION="right" ID="ID_143871825" CREATED="1629902324496" MODIFIED="1631632491087">
+<node TEXT="Installation / Quickstart" POSITION="right" ID="ID_143871825" CREATED="1629902324496" MODIFIED="1632178454162">
 <edge COLOR="#ff0000"/>
 <richcontent TYPE="NOTE">
 
@@ -94,7 +95,7 @@
   </head>
   <body>
     <p>
-      To install this package from [pypy](https://pypi.org/project/ps1/) run the following command.
+      To install this package from [pypy](https://pypi.org/project/unicodes/) run the following command.
     </p>
     <p>
       
@@ -103,7 +104,7 @@
       ```
     </p>
     <p>
-      pip3 install ps1
+      pip3 install unicodes
     </p>
     <p>
       ```
@@ -112,7 +113,7 @@
       
     </p>
     <p>
-      Execute this to make your first prompt
+      Run this to show all the unicode values
     </p>
     <p>
       
@@ -121,7 +122,7 @@
       ```
     </p>
     <p>
-      export PS1=&quot;$(ps1 template -t parrot)&quot;
+      unicodes all
     </p>
     <p>
       ```
@@ -147,7 +148,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="Other Docs" POSITION="right" ID="ID_1589081779" CREATED="1630019734423" MODIFIED="1631462171498">
+<node TEXT="Other Docs" POSITION="right" ID="ID_1589081779" CREATED="1630019734423" MODIFIED="1632178523275">
 <edge COLOR="#00ff00"/>
 <richcontent TYPE="NOTE">
 
@@ -157,13 +158,14 @@
   </head>
   <body>
     <p>
-      * [Api Docs](https://shollingsworth.github.io/ps1/)
+      * [Api Docs](https://shollingsworth.github.io/unicodes/)
     </p>
     <p>
       * [Changelog](./CHANGELOG.md)
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node TEXT="Examples" POSITION="right" ID="ID_52257950" CREATED="1631462145312" MODIFIED="1631462153067">
@@ -182,7 +184,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="PS1 Command Help" POSITION="right" ID="ID_433247386" CREATED="1629929022711" MODIFIED="1631632350192">
+<node TEXT="Command Help" POSITION="right" ID="ID_433247386" CREATED="1629929022711" MODIFIED="1632178535891">
 <edge COLOR="#00ffff"/>
 <richcontent TYPE="NOTE">
 
@@ -192,10 +194,11 @@
   </head>
   <body>
     <p>
-      __PS1__
+      __HELP__
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 </node>

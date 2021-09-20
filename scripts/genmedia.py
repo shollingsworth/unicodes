@@ -5,67 +5,66 @@ from pathlib import Path
 import subprocess
 import shlex
 import argparse
+from contextlib import contextmanager
+
+# pylint: disable=consider-using-with
+# pylint: disable=invalid-name
 
 BDIR = Path(__file__).parent.parent
-EXAMPLE_DIR = BDIR.joinpath("src/ps1api/examples")
-LIGHT_DIR = EXAMPLE_DIR.joinpath("light")
-DARK_DIR = EXAMPLE_DIR.joinpath("dark")
-
+EXAMPLE_DIR = BDIR.joinpath("media/demo")
 DSTDIR = BDIR.joinpath("media")
 
-KONS_GEO = "1400x400,0+0"
-CAP_GEO = "1350x340+1920+60"
+KONS_GEO = "1400x1000,0+0"
+CAP_GEO = "1400x1000+1920+60"
 
 
-def konsole(rcfile: Path, profile=None):
+@contextmanager
+def konsole(rcfile: Path):
+    """launch konsole / program."""
     cmd = shlex.split(
         f"konsole --nofork --geometry {KONS_GEO} -e bash --rcfile {rcfile.resolve()}"
     )
-    if profile:
-        cmd.insert(1, "--profile")
-        cmd.insert(2, profile)
-    return subprocess.Popen(cmd, stderr=subprocess.PIPE)
+    p = subprocess.Popen(cmd, stderr=subprocess.PIPE)
+    try:
+        yield p
+    finally:
+        p.terminate()
 
 
+@contextmanager
 def screencap(dstfile: Path):
+    """Get screencap."""
     cmd = shlex.split(
         f"import -window root -pause 3 -crop {CAP_GEO} {dstfile.resolve()}"
     )
-    return subprocess.Popen(cmd)
+    p = subprocess.Popen(cmd)
+    try:
+        yield p
+    finally:
+        p.terminate()
 
 
-def _iter_media_files():
-    light_path = DSTDIR.joinpath("light")
-    light_path.exists() or light_path.mkdir()
-
-    dark_path = DSTDIR.joinpath("dark")
-    dark_path.exists() or dark_path.mkdir()
-
-    for i in LIGHT_DIR.iterdir():
+def iter_media_files():
+    """Iterate through examples."""
+    for i in EXAMPLE_DIR.iterdir():
         if not i.name.endswith(".sh"):
             continue
-        yield "light", i, light_path.joinpath(f"{i.name}.png")
-
-    for i in DARK_DIR.iterdir():
-        if not i.name.endswith(".sh"):
-            continue
-        yield "dark", i, dark_path.joinpath(f"{i.name}.png")
+        yield i, DSTDIR.joinpath(f"{i.name}.png")
 
 
 def clean():
-    light_path = DSTDIR.joinpath("light")
-    dark_path = DSTDIR.joinpath("dark")
-    for file in light_path.iterdir():
-        print(f"Deleting {file}")
-        file.unlink()
-    for file in dark_path.iterdir():
+    """Clean media files."""
+    for file in DSTDIR.iterdir():
+        if file.is_dir():
+            continue
         print(f"Deleting {file}")
         file.unlink()
 
 
 def check():
+    """Check if files exist."""
     noexist = []
-    for _, srcfile, dfile in _iter_media_files():
+    for srcfile, dfile in iter_media_files():
         if not dfile.exists():
             noexist.append(srcfile.name)
     if noexist:
@@ -75,23 +74,18 @@ def check():
 
 def main(overwrite=False):
     """Run main function."""
-    for profile, srcfile, dfile in _iter_media_files():
+    for srcfile, dfile in iter_media_files():
         if not overwrite and dfile.exists():
             continue
         print(f"Creating: {dfile}")
-        kons = konsole(srcfile, profile)
-        sc = screencap(dfile)
-        sc.communicate()
-        kons.kill()
-
-
-create = lambda: main()
-overwrite = lambda: main(True)
+        with konsole(srcfile) as kons, screencap(dfile) as sc:
+            sc.communicate()
+            kons.kill()
 
 
 MAP = {
-    "create": [create],
-    "overwrite": [overwrite],
+    "create": [main],
+    "overwrite": [lambda: main(True)],
     "clean": [clean],
     "check": [check],
     "regen": [

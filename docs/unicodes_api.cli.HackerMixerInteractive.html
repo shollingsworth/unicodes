@@ -1,0 +1,866 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>unicodes_api.cli.HackerMixerInteractive : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          unicodes_api
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="unicodes_api.html">unicodes_api</a></code>.<code><a href="unicodes_api.cli.html">cli</a></code>.<code><a href="unicodes_api.cli.HackerMixerInteractive.html">HackerMixerInteractive</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">HackerMixerInteractive</span>(<a href="unicodes_api.screen.BidirectionalNewIterator.html" title="unicodes_api.screen.BidirectionalNewIterator">BidirectionalNewIterator</a>):</code></p>
+        <p><a href="classIndex.html#unicodes_api.cli.HackerMixerInteractive">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Hacker mixer upper / scramble letters with variations of unicode.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id14">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#NAME">NAME</a></code></td>
+    <td><span>subcommand name.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#mouse_callback">mouse_callback</a></code></td>
+    <td><span>no action.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup">setup</a></code></td>
+    <td><span>Scroll through all Variations of a word with mixed unicode values for letters.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#seen">seen</a></code></td>
+    <td><span>keep track of what's been seen.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#mixer">mixer</a></code></td>
+    <td><span>Main mixer class.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#alphabet_dict">alphabet_dict</a></code></td>
+    <td><span>main alphabet dict.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#object_dict">object_dict</a></code></td>
+    <td><span>letter object dictionary map.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#let_idx">let_idx</a></code></td>
+    <td><span>letter index.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_word">set_word</a></code></td>
+    <td><span>Set word.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#word">word</a></code></td>
+    <td><span>currently manipulated word.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#letter_pos">letter_pos</a></code></td>
+    <td><span>setup existing (or new) word.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup_popts">setup_popts</a></code></td>
+    <td><span>setup parser options.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#uni_word">uni_word</a></code></td>
+    <td><span>whole unicode mixed word.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#uni_dict">uni_dict</a></code></td>
+    <td><span>value dictionary.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#previous_letter">previous_letter</a></code></td>
+    <td><span>scroll to previous letter in letter_pos.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#next_letter">next_letter</a></code></td>
+    <td><span>scroll to next letter in letter_pos.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#shift_left">shift_left</a></code></td>
+    <td><span>Move letter position left.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#shift_right">shift_right</a></code></td>
+    <td><span>Move letter position right.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#new">new</a></code></td>
+    <td><span>Generate new random value.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#prev">prev</a></code></td>
+    <td><span>go to previous collection value.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#change_text">change_text</a></code></td>
+    <td><span>Replace current word / text block.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#next">next</a></code></td>
+    <td><span>move to next random value.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#obj_display">obj_display</a></code></td>
+    <td><span>Set object display.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#txt">txt</a></code></td>
+    <td><span>placeholder for txt messages.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_has_letter">_has_letter</a></code></td>
+    <td><span>return true if letter position is valid.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_lpos">_get_lpos</a></code></td>
+    <td><span>Get letter position.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_save">_save</a></code></td>
+    <td><span>Save (overwrite entry).</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_print_menu">_print_menu</a></code></td>
+    <td><span>output menu.</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="unicodes_api.screen.BidirectionalIterator.html">BidirectionalIterator</a></code> (via <code><a href="unicodes_api.screen.BidirectionalNewIterator.html">BidirectionalNewIterator</a></code>):
+          </p>
+          <table class="children sortable" id="id15">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#PAD_MAX_HEIGHT">PAD_MAX_HEIGHT</a></code></td>
+    <td><span>initial setting of curses window size.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#__init__">__init__</a></code></td>
+    <td><span>Init class.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#popts">popts</a></code></td>
+    <td><span>Parser options.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#is_mouse">is_mouse</a></code></td>
+    <td><span>initial setting for enabling/disabling mouse interaction.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#args">args</a></code></td>
+    <td><span>future argparse.Namespace value.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#highlight_vals">highlight_vals</a></code></td>
+    <td><span>values to hightlight.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#height">height</a></code></td>
+    <td><span>terminal max height.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#width">width</a></code></td>
+    <td><span>terminal max width.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#nav">nav</a></code></td>
+    <td><span>Navigation group.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#items">items</a></code></td>
+    <td><span>output lines.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#set_args">set_args</a></code></td>
+    <td><span>Set argparse args.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#toggle_mouse">toggle_mouse</a></code></td>
+    <td><span>toggle mouse switch.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#collection">collection</a></code></td>
+    <td><span>collection of values.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#index">index</a></code></td>
+    <td><span>Current collection value.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#kp">kp</a></code></td>
+    <td><span>initial key press value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#getch">getch</a></code></td>
+    <td><span>Get next keypress.</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#current_value">current_value</a></code></td>
+    <td><span>return current value.</span></td>
+  </tr><tr class="basestaticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#get_input">get_input</a></code></td>
+    <td><span>Get user input through the user interface and return it.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#pad_refresh">pad_refresh</a></code></td>
+    <td><span>Refresh screen.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#mouseclick">mouseclick</a></code></td>
+    <td><span>Scrolling the window when pressing up/down arrow keys</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#scroll">scroll</a></code></td>
+    <td><span>Scrolling the window when pressing up/down arrow keys</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#pad_pos">pad_pos</a></code></td>
+    <td><span>initial pad position.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#win">win</a></code></td>
+    <td><span>Main curses window.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#pad">pad</a></code></td>
+    <td><span>pad value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#run">run</a></code></td>
+    <td><span>Run cli command.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_trywrite">_trywrite</a></code></td>
+    <td><span>Attempt to write, and pass if failure occurs.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_dowrite">_dowrite</a></code></td>
+    <td><span>perform a bunch of operations to ensure the curses screen renders properly.</span></td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_get_mouse_breakout">_get_mouse_breakout</a></code></td>
+    <td><span>Get character / word / line from where the mouse is clicked.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_run">_run</a></code></td>
+    <td><span>run program (for reals).</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.NAME">
+    
+  </a>
+  <a name="NAME">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">NAME</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#NAME">unicodes_api.screen.BidirectionalIterator.NAME</a></code></div>
+    
+    <div><p>subcommand name.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.mouse_callback">
+    
+  </a>
+  <a name="mouse_callback">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mouse_callback</span>(self, _):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#mouse_callback">unicodes_api.screen.BidirectionalIterator.mouse_callback</a></code></div>
+    
+    <div><p>no action.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.setup">
+    
+  </a>
+  <a name="setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup</span>(self, word):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalNewIterator.html#setup">unicodes_api.screen.BidirectionalNewIterator.setup</a></code></div>
+    
+    <div><p>Scroll through all Variations of a word with mixed unicode values for letters.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">word</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.seen">
+    
+  </a>
+  <a name="seen">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">seen</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>keep track of what's been seen.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.mixer">
+    
+  </a>
+  <a name="mixer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">mixer</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Main mixer class.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.alphabet_dict">
+    
+  </a>
+  <a name="alphabet_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">alphabet_dict</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>main alphabet dict.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.object_dict">
+    
+  </a>
+  <a name="object_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">object_dict</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>letter object dictionary map.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.let_idx">
+    
+  </a>
+  <a name="let_idx">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">let_idx</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>letter index.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.set_word">
+    
+  </a>
+  <a name="set_word">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_word</span>(self, word):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set word.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">word</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.word">
+    
+  </a>
+  <a name="word">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">word</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>currently manipulated word.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.letter_pos">
+    
+  </a>
+  <a name="letter_pos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">letter_pos</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>setup existing (or new) word.</p></div> (type: <code>int</code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.setup_popts">
+    
+  </a>
+  <a name="setup_popts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup_popts</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#setup_popts">unicodes_api.screen.BidirectionalIterator.setup_popts</a></code></div>
+    
+    <div><p>setup parser options.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive._has_letter">
+    
+  </a>
+  <a name="_has_letter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_has_letter</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return true if letter position is valid.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive._get_lpos">
+    
+  </a>
+  <a name="_get_lpos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_lpos</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get letter position.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.uni_word">
+    
+  </a>
+  <a name="uni_word">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">uni_word</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>whole unicode mixed word.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.uni_dict">
+    
+  </a>
+  <a name="uni_dict">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">uni_dict</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>value dictionary.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive._save">
+    
+  </a>
+  <a name="_save">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_save</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Save (overwrite entry).</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.previous_letter">
+    
+  </a>
+  <a name="previous_letter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">previous_letter</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>scroll to previous letter in letter_pos.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.next_letter">
+    
+  </a>
+  <a name="next_letter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">next_letter</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>scroll to next letter in letter_pos.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.shift_left">
+    
+  </a>
+  <a name="shift_left">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">shift_left</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Move letter position left.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.shift_right">
+    
+  </a>
+  <a name="shift_right">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">shift_right</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Move letter position right.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.new">
+    
+  </a>
+  <a name="new">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">new</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalNewIterator.html#new">unicodes_api.screen.BidirectionalNewIterator.new</a></code></div>
+    
+    <div><p>Generate new random value.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.prev">
+    
+  </a>
+  <a name="prev">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prev</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalNewIterator.html#prev">unicodes_api.screen.BidirectionalNewIterator.prev</a></code></div>
+    
+    <div><p>go to previous collection value.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.change_text">
+    
+  </a>
+  <a name="change_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">change_text</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Replace current word / text block.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.next">
+    
+  </a>
+  <a name="next">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">next</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalNewIterator.html#next">unicodes_api.screen.BidirectionalNewIterator.next</a></code></div>
+    
+    <div><p>move to next random value.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.obj_display">
+    
+  </a>
+  <a name="obj_display">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">obj_display</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set object display.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive._print_menu">
+    
+  </a>
+  <a name="_print_menu">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_print_menu</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#_print_menu">unicodes_api.screen.BidirectionalIterator._print_menu</a></code></div>
+    
+    <div><p>output menu.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.HackerMixerInteractive.txt">
+    
+  </a>
+  <a name="txt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">txt</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#txt">unicodes_api.screen.BidirectionalIterator.txt</a></code></div>
+    
+    <div><p>placeholder for txt messages.</p></div> (type: <code>list</code>)
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for unicodes_api, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 1996-06-17 15:00:00.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

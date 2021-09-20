@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>unicodes_api.cli.InteractAllGroups : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          unicodes_api
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="unicodes_api.html">unicodes_api</a></code>.<code><a href="unicodes_api.cli.html">cli</a></code>.<code><a href="unicodes_api.cli.InteractAllGroups.html">InteractAllGroups</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">InteractAllGroups</span>(<a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html" title="unicodes_api.screen.BidirectionalStaticRevolvingIterator">BidirectionalStaticRevolvingIterator</a>):</code></p>
+        <p><a href="classIndex.html#unicodes_api.cli.InteractAllGroups">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Explore the tokenized unicode data.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id9">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#NAME">NAME</a></code></td>
+    <td><span>subcommand name.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Init class.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#highlight_pos">highlight_pos</a></code></td>
+    <td><span>highlight position from iterative cursor.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#is_detail">is_detail</a></code></td>
+    <td><span>print detailed lines (can be a lot of txt).</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#gobj">gobj</a></code></td>
+    <td><span>Groups instance.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#txt">txt</a></code></td>
+    <td><span>Supplemental text messages.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#index">index</a></code></td>
+    <td><span>current value location.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup_popts">setup_popts</a></code></td>
+    <td><span>setup parser options.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#mouse_callback">mouse_callback</a></code></td>
+    <td><span>mouse callback function.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup">setup</a></code></td>
+    <td><span>Scroll through all unicodes token groups.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#shift_left">shift_left</a></code></td>
+    <td><span>Shift highlight position left.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#shift_right">shift_right</a></code></td>
+    <td><span>Shift highlight position right.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#cur_token">cur_token</a></code></td>
+    <td><span>Current token.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#detail_arr">detail_arr</a></code></td>
+    <td><span>Current detail array.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#cur_detail">cur_detail</a></code></td>
+    <td><span>Current token detail.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#cur_char">cur_char</a></code></td>
+    <td><span>Current character.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#toggle_detail">toggle_detail</a></code></td>
+    <td><span>toggle detail switch.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#search">search</a></code></td>
+    <td><span>get search results.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_reset_hightlight">_reset_hightlight</a></code></td>
+    <td><span>reset highlight position.</span></td>
+  </tr><tr class="property private">
+    
+    <td>Property</td>
+    <td><code><a href="#_detail_lines">_detail_lines</a></code></td>
+    <td><span>Detail lines.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_print_menu">_print_menu</a></code></td>
+    <td><span>menu output.</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html">BidirectionalStaticRevolvingIterator</a></code>:
+          </p>
+          <table class="children sortable" id="id10">
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html#collection">collection</a></code></td>
+    <td><span>collection of values.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html#next">next</a></code></td>
+    <td><span>next navigation.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html#prev">prev</a></code></td>
+    <td><span>previous navigation.</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="unicodes_api.screen.BidirectionalIterator.html">BidirectionalIterator</a></code> (via <code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html">BidirectionalStaticRevolvingIterator</a></code>):
+          </p>
+          <table class="children sortable" id="id11">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#PAD_MAX_HEIGHT">PAD_MAX_HEIGHT</a></code></td>
+    <td><span>initial setting of curses window size.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#popts">popts</a></code></td>
+    <td><span>Parser options.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#is_mouse">is_mouse</a></code></td>
+    <td><span>initial setting for enabling/disabling mouse interaction.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#args">args</a></code></td>
+    <td><span>future argparse.Namespace value.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#highlight_vals">highlight_vals</a></code></td>
+    <td><span>values to hightlight.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#height">height</a></code></td>
+    <td><span>terminal max height.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#width">width</a></code></td>
+    <td><span>terminal max width.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#nav">nav</a></code></td>
+    <td><span>Navigation group.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#items">items</a></code></td>
+    <td><span>output lines.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#set_args">set_args</a></code></td>
+    <td><span>Set argparse args.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#toggle_mouse">toggle_mouse</a></code></td>
+    <td><span>toggle mouse switch.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#kp">kp</a></code></td>
+    <td><span>initial key press value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#getch">getch</a></code></td>
+    <td><span>Get next keypress.</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#current_value">current_value</a></code></td>
+    <td><span>return current value.</span></td>
+  </tr><tr class="basestaticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#get_input">get_input</a></code></td>
+    <td><span>Get user input through the user interface and return it.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#pad_refresh">pad_refresh</a></code></td>
+    <td><span>Refresh screen.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#mouseclick">mouseclick</a></code></td>
+    <td><span>Scrolling the window when pressing up/down arrow keys</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#scroll">scroll</a></code></td>
+    <td><span>Scrolling the window when pressing up/down arrow keys</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#pad_pos">pad_pos</a></code></td>
+    <td><span>initial pad position.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#win">win</a></code></td>
+    <td><span>Main curses window.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#pad">pad</a></code></td>
+    <td><span>pad value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#run">run</a></code></td>
+    <td><span>Run cli command.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_trywrite">_trywrite</a></code></td>
+    <td><span>Attempt to write, and pass if failure occurs.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_dowrite">_dowrite</a></code></td>
+    <td><span>perform a bunch of operations to ensure the curses screen renders properly.</span></td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_get_mouse_breakout">_get_mouse_breakout</a></code></td>
+    <td><span>Get character / word / line from where the mouse is clicked.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_run">_run</a></code></td>
+    <td><span>run program (for reals).</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.NAME">
+    
+  </a>
+  <a name="NAME">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">NAME</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#NAME">unicodes_api.screen.BidirectionalIterator.NAME</a></code></div>
+    
+    <div><p>subcommand name.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#__init__">unicodes_api.screen.BidirectionalIterator.__init__</a></code></div>
+    
+    <div><p>Init class.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.highlight_pos">
+    
+  </a>
+  <a name="highlight_pos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">highlight_pos</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>highlight position from iterative cursor.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.is_detail">
+    
+  </a>
+  <a name="is_detail">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_detail</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>print detailed lines (can be a lot of txt).</p></div> (type: <code>bool</code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.gobj">
+    
+  </a>
+  <a name="gobj">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">gobj</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Groups instance.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.txt">
+    
+  </a>
+  <a name="txt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">txt</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#txt">unicodes_api.screen.BidirectionalIterator.txt</a></code></div>
+    
+    <div><p>Supplemental text messages.</p></div> (type: <code>list</code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.index">
+    
+  </a>
+  <a name="index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">index</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html#index">unicodes_api.screen.BidirectionalStaticRevolvingIterator.index</a></code></div>
+    
+    <div><p>current value location.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.setup_popts">
+    
+  </a>
+  <a name="setup_popts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup_popts</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#setup_popts">unicodes_api.screen.BidirectionalIterator.setup_popts</a></code></div>
+    
+    <div><p>setup parser options.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.mouse_callback">
+    
+  </a>
+  <a name="mouse_callback">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mouse_callback</span>(self, value):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#mouse_callback">unicodes_api.screen.BidirectionalIterator.mouse_callback</a></code></div>
+    
+    <div><p>mouse callback function.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">value</td><td><span class="undocumented">Undocumented</span> (type: <code>Dict[str, str]</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.cli.InteractAllGroups._reset_hightlight">
+    
+  </a>
+  <a name="_reset_hightlight">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_reset_hightlight</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>reset highlight position.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.setup">
+    
+  </a>
+  <a name="setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html#setup">unicodes_api.screen.BidirectionalStaticRevolvingIterator.setup</a></code></div>
+    
+    <div><p>Scroll through all unicodes token groups.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.shift_left">
+    
+  </a>
+  <a name="shift_left">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">shift_left</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Shift highlight position left.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.shift_right">
+    
+  </a>
+  <a name="shift_right">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">shift_right</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Shift highlight position right.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.cur_token">
+    
+  </a>
+  <a name="cur_token">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">cur_token</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Current token.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.detail_arr">
+    
+  </a>
+  <a name="detail_arr">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">detail_arr</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Current detail array.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.cur_detail">
+    
+  </a>
+  <a name="cur_detail">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">cur_detail</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Current token detail.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.cur_char">
+    
+  </a>
+  <a name="cur_char">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">cur_char</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Current character.</p></div>
+  </div>
+</div><div class="baseproperty private">
+  
+  <a name="unicodes_api.cli.InteractAllGroups._detail_lines">
+    
+  </a>
+  <a name="_detail_lines">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">_detail_lines</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Detail lines.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.cli.InteractAllGroups._print_menu">
+    
+  </a>
+  <a name="_print_menu">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_print_menu</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#_print_menu">unicodes_api.screen.BidirectionalIterator._print_menu</a></code></div>
+    
+    <div><p>menu output.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.toggle_detail">
+    
+  </a>
+  <a name="toggle_detail">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">toggle_detail</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>toggle detail switch.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.cli.InteractAllGroups.search">
+    
+  </a>
+  <a name="search">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">search</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>get search results.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for unicodes_api, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 1996-06-17 15:00:00.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

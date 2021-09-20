@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>unicodes_api.screen.BidirectionalNewIterator : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          unicodes_api
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="unicodes_api.html">unicodes_api</a></code>.<code><a href="unicodes_api.screen.html">screen</a></code>.<code><a href="unicodes_api.screen.BidirectionalNewIterator.html">BidirectionalNewIterator</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BidirectionalNewIterator</span>(<a href="unicodes_api.screen.BidirectionalIterator.html" title="unicodes_api.screen.BidirectionalIterator">BidirectionalIterator</a>):</code></p><p>Known subclasses: <code><a href="unicodes_api.cli.HackerMixerInteractive.html">unicodes_api.cli.HackerMixerInteractive</a></code></p>
+        <p><a href="classIndex.html#unicodes_api.screen.BidirectionalNewIterator">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Terminal keypress class that allows you to navigate collections.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id25">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup">setup</a></code></td>
+    <td><span>Setup class.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#new">new</a></code></td>
+    <td><span>menu item new.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#next">next</a></code></td>
+    <td><span>next navigation.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#prev">prev</a></code></td>
+    <td><span>previous navigation.</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="unicodes_api.screen.BidirectionalIterator.html">BidirectionalIterator</a></code>:
+          </p>
+          <table class="children sortable" id="id26">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#NAME">NAME</a></code></td>
+    <td><span>subcommand name.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#PAD_MAX_HEIGHT">PAD_MAX_HEIGHT</a></code></td>
+    <td><span>initial setting of curses window size.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#__init__">__init__</a></code></td>
+    <td><span>Init class.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#popts">popts</a></code></td>
+    <td><span>Parser options.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#is_mouse">is_mouse</a></code></td>
+    <td><span>initial setting for enabling/disabling mouse interaction.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#args">args</a></code></td>
+    <td><span>future argparse.Namespace value.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#highlight_vals">highlight_vals</a></code></td>
+    <td><span>values to hightlight.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#height">height</a></code></td>
+    <td><span>terminal max height.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#width">width</a></code></td>
+    <td><span>terminal max width.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#nav">nav</a></code></td>
+    <td><span>Navigation group.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#items">items</a></code></td>
+    <td><span>output lines.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#mouse_callback">mouse_callback</a></code></td>
+    <td><span>setup argparse options.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#setup_popts">setup_popts</a></code></td>
+    <td><span>setup argparse options.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#set_args">set_args</a></code></td>
+    <td><span>Set argparse args.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#toggle_mouse">toggle_mouse</a></code></td>
+    <td><span>toggle mouse switch.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#collection">collection</a></code></td>
+    <td><span>collection of values.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#index">index</a></code></td>
+    <td><span>Current collection value.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#txt">txt</a></code></td>
+    <td><span>supplemental messages.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#kp">kp</a></code></td>
+    <td><span>initial key press value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#getch">getch</a></code></td>
+    <td><span>Get next keypress.</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#current_value">current_value</a></code></td>
+    <td><span>return current value.</span></td>
+  </tr><tr class="basestaticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#get_input">get_input</a></code></td>
+    <td><span>Get user input through the user interface and return it.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#pad_refresh">pad_refresh</a></code></td>
+    <td><span>Refresh screen.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#mouseclick">mouseclick</a></code></td>
+    <td><span>Scrolling the window when pressing up/down arrow keys</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#scroll">scroll</a></code></td>
+    <td><span>Scrolling the window when pressing up/down arrow keys</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#pad_pos">pad_pos</a></code></td>
+    <td><span>initial pad position.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#win">win</a></code></td>
+    <td><span>Main curses window.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#pad">pad</a></code></td>
+    <td><span>pad value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#run">run</a></code></td>
+    <td><span>Run cli command.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_print_menu">_print_menu</a></code></td>
+    <td><span>Output text.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_trywrite">_trywrite</a></code></td>
+    <td><span>Attempt to write, and pass if failure occurs.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_dowrite">_dowrite</a></code></td>
+    <td><span>perform a bunch of operations to ensure the curses screen renders properly.</span></td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_get_mouse_breakout">_get_mouse_breakout</a></code></td>
+    <td><span>Get character / word / line from where the mouse is clicked.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="unicodes_api.screen.BidirectionalIterator.html#_run">_run</a></code></td>
+    <td><span>run program (for reals).</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalNewIterator.setup">
+    
+  </a>
+  <a name="setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#setup">unicodes_api.screen.BidirectionalIterator.setup</a></code></div><div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.HackerMixerInteractive.html">unicodes_api.cli.HackerMixerInteractive</a></code></div>
+    
+    <div><p>Setup class.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalNewIterator.new">
+    
+  </a>
+  <a name="new">
+    
+  </a>
+  <div class="functionHeader">
+    @abstractmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">new</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.HackerMixerInteractive.html">unicodes_api.cli.HackerMixerInteractive</a></code></div>
+    
+    <div><p>menu item new.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalNewIterator.next">
+    
+  </a>
+  <a name="next">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">next</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#next">unicodes_api.screen.BidirectionalIterator.next</a></code></div><div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.HackerMixerInteractive.html">unicodes_api.cli.HackerMixerInteractive</a></code></div>
+    
+    <div><p>next navigation.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalNewIterator.prev">
+    
+  </a>
+  <a name="prev">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prev</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="unicodes_api.screen.BidirectionalIterator.html#prev">unicodes_api.screen.BidirectionalIterator.prev</a></code></div><div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.HackerMixerInteractive.html">unicodes_api.cli.HackerMixerInteractive</a></code></div>
+    
+    <div><p>previous navigation.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for unicodes_api, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 1996-06-17 15:00:00.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

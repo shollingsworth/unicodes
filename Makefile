@@ -2,7 +2,7 @@
 
 docs := ./docs
 srcdir := ./src
-pkgname := unicodes
+pkgname := unicodes_api
 
 documentation: clean
 	@echo "Running docs"

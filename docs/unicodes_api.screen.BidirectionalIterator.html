@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>unicodes_api.screen.BidirectionalIterator : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          unicodes_api
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="unicodes_api.html">unicodes_api</a></code>.<code><a href="unicodes_api.screen.html">screen</a></code>.<code><a href="unicodes_api.screen.BidirectionalIterator.html">BidirectionalIterator</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BidirectionalIterator</span>(<span title="abc.ABC">ABC</span>):</code></p><p>Known subclasses: <code><a href="unicodes_api.screen.BidirectionalNewIterator.html">unicodes_api.screen.BidirectionalNewIterator</a></code>, <code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html">unicodes_api.screen.BidirectionalStaticRevolvingIterator</a></code>, <code><a href="unicodes_api.screen.BidirectionalStaticStopIterator.html">unicodes_api.screen.BidirectionalStaticStopIterator</a></code></p>
+        <p><a href="classIndex.html#unicodes_api.screen.BidirectionalIterator">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Base class Terminal keypress class that allows you to navigate collections.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id24">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#NAME">NAME</a></code></td>
+    <td><span>subcommand name.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#PAD_MAX_HEIGHT">PAD_MAX_HEIGHT</a></code></td>
+    <td><span>initial setting of curses window size.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Init class.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#popts">popts</a></code></td>
+    <td><span>Parser options.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#is_mouse">is_mouse</a></code></td>
+    <td><span>initial setting for enabling/disabling mouse interaction.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#args">args</a></code></td>
+    <td><span>future argparse.Namespace value.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#highlight_vals">highlight_vals</a></code></td>
+    <td><span>values to hightlight.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#height">height</a></code></td>
+    <td><span>terminal max height.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#width">width</a></code></td>
+    <td><span>terminal max width.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#nav">nav</a></code></td>
+    <td><span>Navigation group.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#items">items</a></code></td>
+    <td><span>output lines.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#mouse_callback">mouse_callback</a></code></td>
+    <td><span>setup argparse options.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup_popts">setup_popts</a></code></td>
+    <td><span>setup argparse options.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_args">set_args</a></code></td>
+    <td><span>Set argparse args.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#toggle_mouse">toggle_mouse</a></code></td>
+    <td><span>toggle mouse switch.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup">setup</a></code></td>
+    <td><span>Run setup before run.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#collection">collection</a></code></td>
+    <td><span>collection of values.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#index">index</a></code></td>
+    <td><span>Current collection value.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#txt">txt</a></code></td>
+    <td><span>supplemental messages.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#kp">kp</a></code></td>
+    <td><span>initial key press value.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#getch">getch</a></code></td>
+    <td><span>Get next keypress.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#next">next</a></code></td>
+    <td><span>menu item next.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#prev">prev</a></code></td>
+    <td><span>menu item previous.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#current_value">current_value</a></code></td>
+    <td><span>return current value.</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#get_input">get_input</a></code></td>
+    <td><span>Get user input through the user interface and return it.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#pad_refresh">pad_refresh</a></code></td>
+    <td><span>Refresh screen.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#mouseclick">mouseclick</a></code></td>
+    <td><span>Scrolling the window when pressing up/down arrow keys</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#scroll">scroll</a></code></td>
+    <td><span>Scrolling the window when pressing up/down arrow keys</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pad_pos">pad_pos</a></code></td>
+    <td><span>initial pad position.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#win">win</a></code></td>
+    <td><span>Main curses window.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pad">pad</a></code></td>
+    <td><span>pad value.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#run">run</a></code></td>
+    <td><span>Run cli command.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_print_menu">_print_menu</a></code></td>
+    <td><span>Output text.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_trywrite">_trywrite</a></code></td>
+    <td><span>Attempt to write, and pass if failure occurs.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_dowrite">_dowrite</a></code></td>
+    <td><span>perform a bunch of operations to ensure the curses screen renders properly.</span></td>
+  </tr><tr class="staticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="#_get_mouse_breakout">_get_mouse_breakout</a></code></td>
+    <td><span>Get character / word / line from where the mouse is clicked.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_run">_run</a></code></td>
+    <td><span>run program (for reals).</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.NAME">
+    
+  </a>
+  <a name="NAME">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">NAME</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.HackerMixerInteractive.html">unicodes_api.cli.HackerMixerInteractive</a></code>, <code><a href="unicodes_api.cli.InteractAllGroups.html">unicodes_api.cli.InteractAllGroups</a></code></div>
+    
+    <div><p>subcommand name.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.PAD_MAX_HEIGHT">
+    
+  </a>
+  <a name="PAD_MAX_HEIGHT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PAD_MAX_HEIGHT</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>initial setting of curses window size.</p></div> (type: <code>int</code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.InteractAllGroups.html">unicodes_api.cli.InteractAllGroups</a></code></div>
+    
+    <div><p>Init class.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.popts">
+    
+  </a>
+  <a name="popts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">popts</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Parser options.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.is_mouse">
+    
+  </a>
+  <a name="is_mouse">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">is_mouse</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>initial setting for enabling/disabling mouse interaction.</p></div> (type: <code>bool</code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.args">
+    
+  </a>
+  <a name="args">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">args</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>future argparse.Namespace value.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.highlight_vals">
+    
+  </a>
+  <a name="highlight_vals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">highlight_vals</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>values to hightlight.</p></div> (type: <code>list</code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.height">
+    
+  </a>
+  <a name="height">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">height</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>terminal max height.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.width">
+    
+  </a>
+  <a name="width">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">width</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>terminal max width.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.nav">
+    
+  </a>
+  <a name="nav">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nav</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Navigation group.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.items">
+    
+  </a>
+  <a name="items">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">items</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>output lines.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.mouse_callback">
+    
+  </a>
+  <a name="mouse_callback">
+    
+  </a>
+  <div class="functionHeader">
+    @abstractmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">mouse_callback</span>(self, value):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.HackerMixerInteractive.html">unicodes_api.cli.HackerMixerInteractive</a></code>, <code><a href="unicodes_api.cli.InteractAllGroups.html">unicodes_api.cli.InteractAllGroups</a></code></div>
+    
+    <div><p>setup argparse options.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.setup_popts">
+    
+  </a>
+  <a name="setup_popts">
+    
+  </a>
+  <div class="functionHeader">
+    @abstractmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">setup_popts</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.HackerMixerInteractive.html">unicodes_api.cli.HackerMixerInteractive</a></code>, <code><a href="unicodes_api.cli.InteractAllGroups.html">unicodes_api.cli.InteractAllGroups</a></code></div>
+    
+    <div><p>setup argparse options.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.set_args">
+    
+  </a>
+  <a name="set_args">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_args</span>(self, args):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set argparse args.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">args</td><td><span class="undocumented">Undocumented</span> (type: <code>argparse.Namespace</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.toggle_mouse">
+    
+  </a>
+  <a name="toggle_mouse">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">toggle_mouse</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>toggle mouse switch.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.setup">
+    
+  </a>
+  <a name="setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.screen.BidirectionalNewIterator.html">unicodes_api.screen.BidirectionalNewIterator</a></code>, <code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html">unicodes_api.screen.BidirectionalStaticRevolvingIterator</a></code>, <code><a href="unicodes_api.screen.BidirectionalStaticStopIterator.html">unicodes_api.screen.BidirectionalStaticStopIterator</a></code></div>
+    
+    <div><p>Run setup before run.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.collection">
+    
+  </a>
+  <a name="collection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">collection</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html">unicodes_api.screen.BidirectionalStaticRevolvingIterator</a></code>, <code><a href="unicodes_api.screen.BidirectionalStaticStopIterator.html">unicodes_api.screen.BidirectionalStaticStopIterator</a></code></div>
+    
+    <div><p>collection of values.</p></div> (type: <code>list</code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.index">
+    
+  </a>
+  <a name="index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">index</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html">unicodes_api.screen.BidirectionalStaticRevolvingIterator</a></code>, <code><a href="unicodes_api.screen.BidirectionalStaticStopIterator.html">unicodes_api.screen.BidirectionalStaticStopIterator</a></code></div>
+    
+    <div><p>Current collection value.</p></div> (type: <code>int</code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.txt">
+    
+  </a>
+  <a name="txt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">txt</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.HackerMixerInteractive.html">unicodes_api.cli.HackerMixerInteractive</a></code>, <code><a href="unicodes_api.cli.InteractAllGroups.html">unicodes_api.cli.InteractAllGroups</a></code></div>
+    
+    <div><p>supplemental messages.</p></div> (type: <code>list</code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.kp">
+    
+  </a>
+  <a name="kp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">kp</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>initial key press value.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.getch">
+    
+  </a>
+  <a name="getch">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">getch</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get next keypress.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.next">
+    
+  </a>
+  <a name="next">
+    
+  </a>
+  <div class="functionHeader">
+    @abstractmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">next</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.screen.BidirectionalNewIterator.html">unicodes_api.screen.BidirectionalNewIterator</a></code>, <code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html">unicodes_api.screen.BidirectionalStaticRevolvingIterator</a></code>, <code><a href="unicodes_api.screen.BidirectionalStaticStopIterator.html">unicodes_api.screen.BidirectionalStaticStopIterator</a></code></div>
+    
+    <div><p>menu item next.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.prev">
+    
+  </a>
+  <a name="prev">
+    
+  </a>
+  <div class="functionHeader">
+    @abstractmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">prev</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.screen.BidirectionalNewIterator.html">unicodes_api.screen.BidirectionalNewIterator</a></code>, <code><a href="unicodes_api.screen.BidirectionalStaticRevolvingIterator.html">unicodes_api.screen.BidirectionalStaticRevolvingIterator</a></code>, <code><a href="unicodes_api.screen.BidirectionalStaticStopIterator.html">unicodes_api.screen.BidirectionalStaticStopIterator</a></code></div>
+    
+    <div><p>menu item previous.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.current_value">
+    
+  </a>
+  <a name="current_value">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">current_value</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>return current value.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator._print_menu">
+    
+  </a>
+  <a name="_print_menu">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_print_menu</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="unicodes_api.cli.HackerMixerInteractive.html">unicodes_api.cli.HackerMixerInteractive</a></code>, <code><a href="unicodes_api.cli.InteractAllGroups.html">unicodes_api.cli.InteractAllGroups</a></code></div>
+    
+    <div><p>Output text.</p></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.get_input">
+    
+  </a>
+  <a name="get_input">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">get_input</span>(prompt):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get user input through the user interface and return it.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator._trywrite">
+    
+  </a>
+  <a name="_trywrite">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_trywrite</span>(self, *args):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Attempt to write, and pass if failure occurs.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator._dowrite">
+    
+  </a>
+  <a name="_dowrite">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_dowrite</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>perform a bunch of operations to ensure the curses screen renders properly.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.pad_refresh">
+    
+  </a>
+  <a name="pad_refresh">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pad_refresh</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Refresh screen.</p></div>
+  </div>
+</div><div class="basestaticmethod private">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator._get_mouse_breakout">
+    
+  </a>
+  <a name="_get_mouse_breakout">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_get_mouse_breakout</span>(line, y):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Get character / word / line from where the mouse is clicked.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">line</td><td><span class="undocumented">Undocumented</span> (type: <code>bytes</code>)</td></tr><tr><td></td><td class="fieldArg">y</td><td><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.mouseclick">
+    
+  </a>
+  <a name="mouseclick">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mouseclick</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Scrolling the window when pressing up/down arrow keys</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.scroll">
+    
+  </a>
+  <a name="scroll">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">scroll</span>(self, direction):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Scrolling the window when pressing up/down arrow keys</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.pad_pos">
+    
+  </a>
+  <a name="pad_pos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pad_pos</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>initial pad position.</p></div> (type: <code>int</code>)
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator._run">
+    
+  </a>
+  <a name="_run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_run</span>(self, win):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>run program (for reals).</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.win">
+    
+  </a>
+  <a name="win">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">win</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Main curses window.</p></div> (type: <code>curses.window</code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.pad">
+    
+  </a>
+  <a name="pad">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pad</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>pad value.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="unicodes_api.screen.BidirectionalIterator.run">
+    
+  </a>
+  <a name="run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">run</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Run cli command.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for unicodes_api, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 1996-06-17 15:00:00.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>
