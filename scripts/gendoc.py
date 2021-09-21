@@ -34,6 +34,20 @@ def _code_section(txt):
     return "\n".join(val)
 
 
+def _getdesc(file: Path):
+    content = file.read_text()
+    arr = content.splitlines()
+    for i in arr:
+        _a2 = i.split("=")
+        if len(_a2) != 2:
+            continue
+        name, desc = _a2
+        if name != "DESC":
+            continue
+        return desc.strip('"')
+    return None
+
+
 def _examples():
     sections = []
     for _mf in sorted(MEDIA_DIR.iterdir()):
@@ -42,11 +56,14 @@ def _examples():
             continue
         _bn = _mf.name.replace(_mf.suffix, "")
         script = DEMO_DIR.joinpath(_bn)
+        desc = _getdesc(script)
+        desc = f"> {desc}" if desc else ""
         srcpath = script.relative_to(BASE)
         medpath = _mf.relative_to(BASE)
         srclink = f"[{script.name}]({GITHUB_BASE}/{srcpath})"
         medlink = f"![{script.name}]({GITHUB_RAW}/{medpath})"
         sect.append(f"## {srclink}")
+        sect.append(desc)
         sect.append(f"{medlink}")
         sections.append("\n".join(sect))
     return "\n".join(sections)

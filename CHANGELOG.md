@@ -1,6 +1,11 @@
+# v0.0.3
+#### Updated documentation
+> 2021-09-21 00:07 UTC [HEAD](https://github.com/shollingsworth/unicodes/commit/HEAD)
+
+---
 # v0.0.2
 #### Fixed bug in documentation view
-> 2021-09-20 23:50 UTC [HEAD](https://github.com/shollingsworth/unicodes/commit/HEAD)
+> 2021-09-20 23:51 UTC [96d329c](https://github.com/shollingsworth/unicodes/commit/96d329cff434077591e5eb2057915ab9e58d564d)
 
 ---
 # v0.0.1

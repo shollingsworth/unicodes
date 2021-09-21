@@ -42,12 +42,16 @@ See: [LICENSE](./LICENSE)
 * [Changelog](./CHANGELOG.md)
 ## Examples [&#8593;](#toc)
 ## [all_box_drawings.sh](https://github.com/shollingsworth/unicodes/blob/main/media/demo/all_box_drawings.sh)
+> Show all unicode names with 'drawing' and 'box' in their names
 ![all_box_drawings.sh](https://github.com/shollingsworth/unicodes/raw/main/media/all_box_drawings.sh.png)
 ## [all_playing_cards_no_trump.sh](https://github.com/shollingsworth/unicodes/blob/main/media/demo/all_playing_cards_no_trump.sh)
+> Show all playing cards minus trump string
 ![all_playing_cards_no_trump.sh](https://github.com/shollingsworth/unicodes/raw/main/media/all_playing_cards_no_trump.sh.png)
 ## [hacker_mixer.sh](https://github.com/shollingsworth/unicodes/blob/main/media/demo/hacker_mixer.sh)
+> hacker mix 'my cool name' in a tui
 ![hacker_mixer.sh](https://github.com/shollingsworth/unicodes/raw/main/media/hacker_mixer.sh.png)
 ## [show_all_pairs.sh](https://github.com/shollingsworth/unicodes/blob/main/media/demo/show_all_pairs.sh)
+> show pre-defined pairs of unicode objects (i.e. left/right up/down etc.)
 ![show_all_pairs.sh](https://github.com/shollingsworth/unicodes/raw/main/media/show_all_pairs.sh.png)
 ## Command Help [&#8593;](#toc)
 # Main
