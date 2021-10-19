@@ -1,6 +1,11 @@
+# v0.0.4
+#### disabled mouse mask on hackermix by default
+> 2021-10-19 13:13 UTC [HEAD](https://github.com/shollingsworth/unicodes/commit/HEAD)
+
+---
 # v0.0.3
 #### Updated documentation
-> 2021-09-21 00:07 UTC [HEAD](https://github.com/shollingsworth/unicodes/commit/HEAD)
+> 2021-09-21 00:07 UTC [2423f43](https://github.com/shollingsworth/unicodes/commit/2423f43e8d1c7b55a232835a3b4e7b1397dc5794)
 
 ---
 # v0.0.2

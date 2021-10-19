@@ -383,7 +383,7 @@ class BidirectionalIterator(ABC):
             curses.initscr()
             curses.start_color()
             curses.use_default_colors()
-            curses.mousemask(1)
+            curses.mousemask(self.is_mouse)
             # wrap the real program
             curses.wrapper(self._run)
         except KeyboardInterrupt:

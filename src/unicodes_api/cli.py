@@ -313,6 +313,7 @@ class HackerMixerInteractive(BidirectionalNewIterator):
                 "change text",
             ).set_func(self.change_text)
         )
+        self.is_mouse = False
 
     def set_word(self, word: str):
         """Set word."""
